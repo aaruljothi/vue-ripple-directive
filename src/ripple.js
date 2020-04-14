@@ -15,6 +15,7 @@ var Ripple = {
 
         var bg = binding.value || Ripple.color || 'rgba(0, 0, 0, 0.35)';
         var zIndex = Ripple.zIndex || '9999';
+        var transition = Ripple.transition; 
 
         function rippler(event, el) {
             var target = el;
@@ -46,7 +47,7 @@ var Ripple = {
             ripple.style.marginLeft= '0px';
             ripple.style.width= '1px';
             ripple.style.height= '1px';
-            ripple.style.transition= 'all ' + props.transition + 'ms cubic-bezier(0.4, 0, 0.2, 1)';
+            ripple.style.transition= 'all ' + transition + 'ms cubic-bezier(0.4, 0, 0.2, 1)';
             ripple.style.borderRadius= '50%';
             ripple.style.pointerEvents= 'none';
             ripple.style.position= 'relative';
@@ -125,7 +126,7 @@ var Ripple = {
                         }
                     }
 
-                }, props.transition + 250)
+                }, transition + 250)
             }
 
             if(event.type === 'mousedown') {
